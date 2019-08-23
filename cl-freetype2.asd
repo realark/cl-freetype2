@@ -17,13 +17,14 @@
                 :serial t
                 :components
                 (
-                 #+nil
+                 #-win32
                  (:module "freetype2-grovel"
                   :pathname "grovel"
                   :components
                           ((:static-file "grovel-freetype.h")
                            (cffi-grovel:grovel-file "grovel-freetype2")))
 
+                 #+win32
                  (:file "grovel/grovel-freetype2-processed-grovel-file")
                  (:file "cffi-cwrap")
                  (:file "cffi-defs")
@@ -49,7 +50,7 @@
 (push (concatenate 'string "-I"
                    (directory-namestring
                     (asdf:component-pathname
-                     (asdf:find-component :cl-freetype2 '("freetype2-ffi" #+nil "freetype2-grovel")))))
+                     (asdf:find-component :cl-freetype2 '("freetype2-ffi" #-win32 "freetype2-grovel")))))
       cffi-grovel::*cc-flags*)
 
 (defmethod perform ((o test-op) (c (eql (find-system :cl-freetype2))))
