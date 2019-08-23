@@ -9,13 +9,6 @@
           #+(and windows x86-64) "-Ic:/msys64/mingw64/include/freetype2"
           #+(and windows x86) "-I/mingw32/include/freetype2"
           #+(and windows x86) "-Ic:/msys32/mingw32/include/freetype2"
-          #+(and windows x86-64) #.(concatenate 'string "-I" (sb-posix:getenv "HOME") ".roswell/lisp/quicklisp/dists/quicklisp/software/cl-freetype2-20171019-git/src/ffi/grovel")
-          #+(and windows x86-64) #.(concatenate 'string "-I" (sb-posix:getenv "HOME") ".roswell/impls/x86-64/windows/msys2/20180531/mingw64/include/freetype2")
-          #+(and windows x86-64) #.(concatenate 'string "-I" (sb-posix:getenv "HOME") ".roswell/impls/x86-64/windows/msys2/20180531/mingw64/include/freetype2/freetype")
-
-          #+(and windows x86-64) #.(concatenate 'string "-I" (sb-posix:getenv "HOME") "quicklisp/local-projects/cl-freetype2-20171019-git/src/ffi/grovel")
-          #+(and windows x86-64) #.(concatenate 'string "-I" (sb-posix:getenv "HOME") "quicklisp/local-projects/cl-freetype2-20171019-git/src/ffi/grovel/freetype2")
-          #+(and windows x86-64) #.(concatenate 'string "-I" (sb-posix:getenv "HOME") "quicklisp/local-projects/cl-freetype2-20171019-git/src/ffi/grovel/freetype2/freetype")
           #-darwin "-I/usr/include/freetype2"
           #-darwin "-I/usr/include/freetype2/freetype2"
           #-darwin "-I/usr/include/freetype2/freetype"
